@@ -40,8 +40,9 @@ coursies.map( (course, index) => {
     container_course.appendChild(control_course);
 });
 
-//select course
-btn_select.addEventListener("click", (e)=>{
+//this method return the course selected
+const get_selected_course = ()=>{
+    
     //get all elements course
     const all_radios = [...document.querySelectorAll(".course input[type=radio]")];
 
@@ -50,13 +51,31 @@ btn_select.addEventListener("click", (e)=>{
         return radio.checked;
     });
     
-    //attribute value in input of the course selected
-    //try exception case none course exist
     try {
-        course_selected.value = control_actived[0].previousSibling.innerHTML;
+        return control_actived[0].parentNode;
     }
-    catch (exception){
+    catch(exception){
         course_selected.value = "nenhum curso selecionado!";
     }
     
+}
+
+//select course
+btn_select.addEventListener("click", (e)=>{
+    
+    //const what attribute the value of course selected
+    const course = get_selected_course();
+    //attribute value in input of the course selected
+    course_selected.value = course.firstChild.innerHTML;
+    
+});
+
+//remove a course
+btn_remove.addEventListener("click", (e)=>{
+    
+    //const what attribute the value of course selected
+    const course = get_selected_course();
+    //remove the course
+    course.remove();
+    course_selected.value = "";
 });

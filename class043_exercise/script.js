@@ -1,8 +1,7 @@
 
-//select form
-//coursies form
-const select_course = document.getElementById("course");
-const coursies = [...document.querySelectorAll(".course")];
+//course and course selected
+const course_added = document.getElementById("course");
+const course_selected = document.getElementById("course-selected");
 
 //btns
 //add course
@@ -11,4 +10,35 @@ const btn_add = document.getElementById("btn-add");
 const btn_remove = document.getElementById("btn-remove");
 //select course
 const btn_select = document.getElementById("btn-select");
+
+//coursies element
+const coursies_element = document.getElementById("coursies");
+
+//coursies array
+const coursies = ["HTML", "CSS", "Javascript", "PHP", "React"];
+
+//add cousies in element #course_element
+coursies.map( (course, index) => {
+    
+    //create a new container for course
+    const container_course = document.createElement("div");
+    container_course.setAttribute("class", "course");
+    container_course.setAttribute("id", `course-${index+1}`);
+ 
+    //create a legend for the course
+    const legend_course = document.createElement("label");
+    legend_course.innerHTML = course;
+
+    //create a control for to select a course
+    const control_course = document.createElement("input");
+    control_course.setAttribute("type", "radio");
+    control_course.setAttribute("name", "rdb-course");
+    
+    //add elements (course, legend and control)
+    coursies_element.appendChild(container_course);
+    container_course.appendChild(legend_course);
+    container_course.appendChild(control_course);
+});
+
+//selected course
 

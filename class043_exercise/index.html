@@ -16,7 +16,8 @@
         <form action="#" name="select-course">
             
             <Label for="course">Curso</label>
-            <input type="text" id="course"/>
+            <input type="text" id="course" placeholder="Novo curso"/>
+            <input type="text" id="course-selected" placeholder="curso selecionado aqui" readonly/>
             <input type="button" id="btn-add" value="Adcionar curso"/>
             <input type="button" id="btn-remove" value="Remover curso"/>
             <input type="button" id="btn-select" value="Selecionar curso"/>
@@ -27,20 +28,9 @@
         <form name="coursies" action="#">
             
             <!--list of coursies-->
-            <ul>
-                <li class="course">
-                    <label for="html">HTML</label>
-                    <input type="radio" id="html" name="course"/>
-                </li>
-                <li class="course">
-                    <label for="css">CSS</label>
-                    <input type="radio" id="css" name="course"/>
-                </li>
-                <li class="course">
-                    <label for="js">Javascript</label>
-                    <input type="radio" id="js" name="course"/>
-                </li>
-            </ul>
+            <div id="coursies">
+                <!--your coursies here-->
+            </div>
             
         </form>
             

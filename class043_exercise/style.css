@@ -1,0 +1,85 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+#box {
+    padding: 20px;
+    width: 320px;
+    margin: 0 auto;
+}
+
+/*form coursies selected*/
+#box, form[name="select-course"], form[name="coursies"]{
+    border: 1px solid #fff;
+}
+
+form[name="select-course"], form[name="coursies"]{
+    background-color: #555;
+}
+
+form[name="select-course"] {
+    margin: 10px 0;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form[name="select-course"] input {
+    padding:10px;
+    margin: 2px 0;
+}
+
+form[name="select-course"] label {
+    font-size: 15px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #0f0;
+    font-weight: bold;
+}
+
+form[name="select-course"] input[type="button"] {
+    background-color: #0a5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+    width: 200px;
+}
+
+form[name="select-course"] input[type="button"]:hover {
+    background-color: #000;
+    border: 1px solid #fff;
+    transition: .5s;
+}
+
+/*form coursies*/
+form[name="coursies"]{
+    padding: 10px;
+}
+
+form[name="coursies"] ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right:30px;
+}
+
+form[name="coursies"] ul li{
+    border: 1px solid #fff;
+    background-color: #008;
+    padding:10px;
+    margin: 5px;
+    width: 200px;
+    border-radius:5px;
+    display: flex;
+    justify-content: space-between;
+}

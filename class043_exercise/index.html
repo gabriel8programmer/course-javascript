@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <title>metodo filter em javascript</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <h1>Trabalhando com Metodo Filter em Javascript - Parte 2</h1>
+    
+    <!--structure of the exercise-->
+    <div id="box">
+        
+        <!--form-->
+        <form action="#" name="select-course">
+            
+            <Label for="course">Curso</label>
+            <input type="text" id="course"/>
+            <input type="button" id="btn-add" value="Adcionar curso"/>
+            <input type="button" id="btn-remove" value="Remover curso"/>
+            <input type="button" id="btn-select" value="Selecionar curso"/>
+            
+        </form>
+        
+        <!--form of coursies-->
+        <form name="coursies" action="#">
+            
+            <!--list of coursies-->
+            <ul>
+                <li class="course">
+                    <label for="html">HTML</label>
+                    <input type="radio" id="html" name="course"/>
+                </li>
+                <li class="course">
+                    <label for="css">CSS</label>
+                    <input type="radio" id="css" name="course"/>
+                </li>
+                <li class="course">
+                    <label for="js">Javascript</label>
+                    <input type="radio" id="js" name="course"/>
+                </li>
+            </ul>
+            
+        </form>
+            
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

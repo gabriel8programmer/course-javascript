@@ -82,10 +82,6 @@ form[name="coursies"] #coursies{
     align-items: center;
 }
 
-form[name="coursies"] #coursies label{
-    text-transform: capitalize;
-}
-
 form[name="coursies"] #coursies .course{
     border: 1px solid #fff;
     background-color: #008;
@@ -93,6 +89,10 @@ form[name="coursies"] #coursies .course{
     margin: 5px;
     width: 200px;
     border-radius:5px;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+}
+
+.selected {
+    background-color: #a00 !important;
+    color: white;
 }

@@ -21,46 +21,33 @@ const coursies = ["HTML", "CSS", "Javascript", "PHP", "React"];
 
 //auxiliar functions
 
-//this function return the course selected
-const get_selected_course = ()=>{
+//this function disable other coursies
+const clear_coursies_selected = ()=>{
     
-    //get all elements course
-    const all_radios = [...document.querySelectorAll(".course input[type=radio]")];
-
-    //search course
-    const control_actived = all_radios.filter(radio =>{
-        return radio.checked;
-    });
+    //get all coursies selected
+    const coursies_selected = [...document.querySelectorAll(".selected")];
     
-    try {
-        return control_actived[0].parentNode;
-    }
-    catch(exception){
-        course_selected.value = "nenhum curso selecionado!";
-    }
-    
+    coursies_selected.map( course =>{
+        course.classList.remove("selected");
+    })
 }
 
 //this function create  new element for a course
 const create_new_course = (name)=>{
     
     //create a new container for course
-    const container_course = document.createElement("div");
-    container_course.setAttribute("class", "course");
- 
-    //create a legend for the course
-    const legend_course = document.createElement("label");
-    legend_course.innerHTML = name;
-
-    //create a control for to select a course
-    const control_course = document.createElement("input");
-    control_course.setAttribute("type", "radio");
-    control_course.setAttribute("name", "rdb-course");
+    const new_course = document.createElement("div");
+    new_course.setAttribute("class", "course");
+    new_course.innerHTML = name;
     
-    //add elements (legend and control) and return the final element of course
-    container_course.appendChild(legend_course);
-    container_course.appendChild(control_course);
-    return container_course;
+    //add listener in course
+    new_course.addEventListener("click", (e)=>{
+        clear_coursies_selected();
+        e.target.classList.toggle("selected");
+    });
+
+    //return the course
+    return new_course;
 }
 
 //add cousies in element #course_element
@@ -77,9 +64,9 @@ coursies.map( (course, index) => {
 btn_select.addEventListener("click", (e)=>{
     
     //const what attribute the value of course selected
-    const course = get_selected_course();
+    const course = document.querySelector(".selected");
     //attribute value in input of the course selected
-    course_selected.value = course.firstChild.innerHTML;
+    course_selected.value = course.innerHTML;
     
 });
 
@@ -87,7 +74,7 @@ btn_select.addEventListener("click", (e)=>{
 btn_remove.addEventListener("click", (e)=>{
     
     //const what attribute the value of course selected
-    const course = get_selected_course();
+    const course = document.querySelector(".selected");
  
     //test if course selected is null or not
     if (course_selected.value){
@@ -104,7 +91,7 @@ btn_remove.addEventListener("click", (e)=>{
 //add course before
 btn_add_before.addEventListener("click", (e)=>{
     //const what attribute the value of course selected
-    const course = get_selected_course();
+    const course = document.querySelector(".selected");
     
     //test if course is null or not
     if (course_added.value){
@@ -130,7 +117,7 @@ btn_add_before.addEventListener("click", (e)=>{
 //add course later
 btn_add_later.addEventListener("click", (e)=>{
     //const what attribute the value of course selected
-    const course = get_selected_course();
+    const course = document.querySelector(".selected");
 
     //test if course is null or not
     if (course_added.value){

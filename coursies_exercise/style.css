@@ -9,6 +9,10 @@ body {
     color: #fff;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 #box {
     padding: 20px;
     width: 320px;
@@ -39,7 +43,7 @@ form[name="select-course"] input {
 
 form[name="select-course"] input#course-selected {
     background-color: #0000;
-    color: white;
+    color: yellow;
     text-align: center;
     margin: 10px 0;
 }

@@ -40,5 +40,23 @@ coursies.map( (course, index) => {
     container_course.appendChild(control_course);
 });
 
-//selected course
+//select course
+btn_select.addEventListener("click", (e)=>{
+    //get all elements course
+    const all_radios = [...document.querySelectorAll(".course input[type=radio]")];
 
+    //search course
+    const control_actived = all_radios.filter(radio =>{
+        return radio.checked;
+    });
+    
+    //attribute value in input of the course selected
+    //try exception case none course exist
+    try {
+        course_selected.value = control_actived[0].previousSibling.innerHTML;
+    }
+    catch (exception){
+        course_selected.value = "nenhum curso selecionado!";
+    }
+    
+});

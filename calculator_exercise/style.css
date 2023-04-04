@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#calculator {
+    background-color: #50a;
+    margin: auto;
+    padding:20px;
+    width:300px;
+}
+
+#input p {
+    display: flex;
+    align-items: center;
+}
+
+#input input, #input span {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+#input input {
+    padding:5px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size:18px!importan;
+}
+
+#buttons {
+    margin: 20px 0;
+}
+
+#buttons button {
+    width: 40px;
+    height:40px;
+    font-size: 20px;
+}
+
+#result {
+    color: yellow;
+    font-size:20px;
+}

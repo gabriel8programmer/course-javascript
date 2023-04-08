@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Promises in javaacript</title>
+  
+  <style>
+      body {
+          background:#000;
+          color:#fff;
+      }
+      
+      p {
+          color:#ff0;
+          text-shadow:1px 1px 1px #fff;
+          font-size:17px;
+      }
+      
+      #btn-on {
+          padding:10px 20px;
+          background:#00f;
+          color:#fff;
+          box-shadow:1px 1px 1px #007
+      }
+  </style>
+  
+</head>
+<body>
+    
+    <p></p>
+    <button id="btn-on">On</button>
+    
+    <script>
+        
+        //create a simple counter in javascript
+
+        //get elements in dom
+        const p = document.querySelector("p");
+        const btn_on = document.getElementById("btn-on");
+        
+        //variable for the counter and for the counter_on
+        let counter = 0;
+        let counter_on = true;
+        
+        //create a promise
+        const count = function(){
+            
+            const promise = new Promise((resolve, reject)=>{
+            if (counter_on){
+                resolve(`The counter is ON!<hr/>
+                ${counter}`);
+                counter++;
+            }
+            else {
+                reject("The counter is OFF!");
+            }
+            
+            
+            });
+        
+            return promise;
+        }
+        
+        btn_on.addEventListener("click", ()=>{
+            const get_count = count();
+            
+            get_count.then((result)=>{
+                p.innerHTML = result;
+            });
+            
+            get_count.catch((result)=>{
+                p.innerHTML = result;
+            });
+        });
+        
+    </script>
+</body>
+</html>

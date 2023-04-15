@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #000;
+  color: #ddd;
+}
+
+.controls {
+  padding: 20px;
+  background-color: #053;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.control {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #ddd;
+  flex: 1;
+  height: 100%;
+}
+
+.control input {
+  padding: 5px;
+}
+
+button#btn-add {
+  margin-top: 10px;
+  background-color: #d06;
+  color: #ddd;
+  border-radius: 5px;
+}
+
+button#btn-remove {
+  background-color: #50d;
+  color: #ddd;
+}
+
+.control button {
+  padding: 10px 30px;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.add {
+  margin: 0 10px;
+}
+
+@media (max-width: 650px) {
+
+  .controls {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .control {
+    align-items: center;
+    width: 100%;
+  }
+
+  .add {
+    margin: 10px 0;
+  }
+
+}

@@ -17,8 +17,8 @@ let list_ball_elements = [];
 //class ball
 class Ball {
 
-  constructor(surface, list) {
-    this.size = Math.round(Math.random() * 10) + 20;
+  constructor(surface) {
+    this.size = Math.round(Math.random() * 10) + 5;
     this.x = Math.round(Math.random() * (WIDTH - this.size));
     this.y = Math.round(Math.random() * (HEIGHT - this.size));
     this.dir_x = this.get_random_dir();
@@ -28,10 +28,8 @@ class Ball {
     this.r = this.get_random_color();
     this.g = this.get_random_color();
     this.b = this.get_random_color();
-    this.id = "";
     this.element = this.get_new_element();
     this.surface = surface;
-    this.list = list;
 
     //call methods
     this.render();
@@ -73,7 +71,7 @@ class Ball {
 
   remove = () => {
     this.element.remove();
-    this.list.pop();
+    txt_amound.value = list_ball_elements.length;
   }
 
   render = () => {
@@ -83,7 +81,7 @@ class Ball {
   control_move_vertical = () => {
     if ((this.y + this.size) >= HEIGHT) {
       this.dir_y = -1;
-    } else if (this.y < 0) {
+    } else if (this.y <= 0) {
       this.dir_y = 1;
     }
   }
@@ -91,7 +89,7 @@ class Ball {
   control_move_horizontal = () => {
     if ((this.x + this.size) >= WIDTH) {
       this.dir_x = -1;
-    } else if (this.x < 0) {
+    } else if (this.x <= 0) {
       this.dir_x = 1;
     }
   }
@@ -107,7 +105,7 @@ class Ball {
   }
 
   update = () => {
-    txt_amound.value = this.list.length;
+    
     this.control_move_horizontal();
     this.control_move_vertical();
     this.move();
@@ -131,9 +129,11 @@ btn_adding.addEventListener("click", (e) => {
 
   for (let c = 0; c < value; c++) {
     //add ball
-    const ball = new Ball(element_display, list_ball_elements);
+    const ball = new Ball(element_display);
     list_ball_elements.push(ball);
   }
+  
+  txt_amound.value = list_ball_elements.length;
 
 });
 
@@ -145,5 +145,6 @@ btn_remove.addEventListener("click", (e) => {
     //remove ball
     ball.remove();
   });
-
+  
+  list_ball_elements = [];
 });
